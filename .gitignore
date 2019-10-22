@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # The directory Mix will write compiled artifacts to.
 /_build/
 
@@ -22,3 +23,14 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 cards-*.tar
 
+=======
+/_build
+/cover
+/deps
+/doc
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+>>>>>>> d3f50df1b4e451247ec95bb5e2590bfc3d754022

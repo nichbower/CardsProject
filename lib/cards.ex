@@ -1,17 +1,5 @@
 defmodule Cards do
-  @moduledoc """
-  Documentation for Cards.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Cards.hello()
-      :world
-
-  """
   def create_deck do
     values = ["Ace", "Two", "Three", "One", "four", "five", "six", "seven"]
     suits = ["spades", "clubs", "hearts", "diamonds"]
@@ -20,9 +8,7 @@ defmodule Cards do
     #     "#{value} of #{suit}"
     #   end
     # end
-
     # List.flatten(cards)
-    
     for suit <- suits, value <- values do
         "#{value} of #{suit}"
       end
@@ -38,5 +24,16 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
-  #TODO: deal cards
+
+  def deal(deck, hand_size) do
+    Enum.split(deck, hand_size)
+    # returns a tuple -- can be accessed with pattern matching like { hand, rest_of_deck } = Cards.deal()
+  end
+
+
+  def save_file(deck, filename) do
+    binary = :erlang.term_to_binary(deck)
+    File.write(filename, binary)
+  end
+
 end
